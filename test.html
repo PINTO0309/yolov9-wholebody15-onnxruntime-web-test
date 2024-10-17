@@ -28,7 +28,8 @@
   <div id="inference-time" style="margin-top: 10px;"></div>
 
   <!-- onnxruntime-web を CDN から読み込む -->
-  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+  <!-- https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ -->
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.all.js"></script>
 
   <script>
     const MODEL_INPUT_WIDTH = 640;   // モデルの入力幅
@@ -99,7 +100,7 @@
     // ONNX モデルのロード
     async function loadModel() {
       try {
-        const session = await ort.InferenceSession.create('./yolov9_s_wholebody15_post_0145_1x3x480x640.with_runtime_opt.ort');
+        const session = await ort.InferenceSession.create('./yolov9_s_wholebody15_post_0145_1x3x480x640.with_runtime_opt.ort', {executionProviders: ["wasm"]});
         return session;
       } catch (err) {
         console.error('モデルのロードに失敗しました:', err);
