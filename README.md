@@ -21,8 +21,13 @@ A test environment running yolov9-wholebody15 on onnxruntime-web.
 
 - Results
 
-    ![image](https://github.com/user-attachments/assets/ff29a8e0-3ee3-4b23-8208-a6e80b1bfaff)
+    - YOLOv9-S
 
+        ![image](https://github.com/user-attachments/assets/ff29a8e0-3ee3-4b23-8208-a6e80b1bfaff)
+
+    - YOLOv9-N
+
+        ![image](https://github.com/user-attachments/assets/673fa82f-d7ef-4142-93ac-2e612a888c10)
 
 ## WebGPU
 
