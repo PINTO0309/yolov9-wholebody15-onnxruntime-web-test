@@ -19,7 +19,7 @@ RELUS=$(echo ${RELU} | sed 's/-/_/g')
 # QAT= or QAT=-qat
 QAT=
 QATS=$(echo ${QAT} | sed 's/-/_/g')
-MODEL_NAME=yolov9_s_wholebody15_post
+MODEL_NAME=yolov9_n_wholebody15_post
 SUFFIX="0145_1x3x"
 
 OPSET=13

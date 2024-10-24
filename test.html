@@ -100,7 +100,7 @@
     // ONNX モデルのロード
     async function loadModel() {
       try {
-        const session = await ort.InferenceSession.create('./yolov9_s_wholebody15_post_0145_1x3x480x640.with_runtime_opt.ort', {executionProviders: ["wasm"]});
+        const session = await ort.InferenceSession.create('./yolov9_n_wholebody15_post_0145_1x3x480x640.with_runtime_opt.ort', {executionProviders: ["wasm"]});
         return session;
       } catch (err) {
         console.error('モデルのロードに失敗しました:', err);
