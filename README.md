@@ -1,6 +1,8 @@
 # yolov9-wholebody15-onnxruntime-web-test
 A test environment running yolov9-wholebody15 on onnxruntime-web.
 
+model: https://github.com/PINTO0309/PINTO_model_zoo/tree/main/456_YOLOv9-Wholebody15
+
 ## CPU (Wasm)
 
 - optimization
