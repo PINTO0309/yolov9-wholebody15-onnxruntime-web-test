@@ -26,7 +26,7 @@ A test environment running yolov9-wholebody15 on onnxruntime-web.
         ![image](https://github.com/user-attachments/assets/ff29a8e0-3ee3-4b23-8208-a6e80b1bfaff)
 
     - YOLOv9-T
- 
+
         ![image](https://github.com/user-attachments/assets/200c0f69-17f7-4023-9f51-6c1747d1da9f)
 
     - YOLOv9-N
@@ -72,7 +72,11 @@ tensorflow_hub
 
 onnx2tf -i yolov9_n_wholebody15_post_0145_1x3x480x640.onnx -cotof
 
-tensorflowjs_converter --input_format tf_saved_model --output_format tfjs_graph_model saved_model tfjs_model
+tensorflowjs_converter \
+--input_format tf_saved_model \
+--output_format tfjs_graph_model \
+saved_model \
+tfjs_model
 ```
 ![image](https://github.com/user-attachments/assets/23930019-854e-4346-b502-e7a051f3b7d2)
 ![image](https://github.com/user-attachments/assets/f6a24109-5dd6-421d-a7c8-06b29ae45843)
