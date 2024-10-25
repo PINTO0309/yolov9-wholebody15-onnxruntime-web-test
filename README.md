@@ -25,6 +25,10 @@ A test environment running yolov9-wholebody15 on onnxruntime-web.
 
         ![image](https://github.com/user-attachments/assets/ff29a8e0-3ee3-4b23-8208-a6e80b1bfaff)
 
+    - YOLOv9-T
+ 
+        ![image](https://github.com/user-attachments/assets/200c0f69-17f7-4023-9f51-6c1747d1da9f)
+
     - YOLOv9-N
 
         ![image](https://github.com/user-attachments/assets/673fa82f-d7ef-4142-93ac-2e612a888c10)
