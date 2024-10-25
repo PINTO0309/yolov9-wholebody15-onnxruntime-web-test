@@ -72,7 +72,7 @@ tensorflow_decision_forests \
 ydf \
 tensorflow_hub
 
-onnx2tf -i yolov9_n_wholebody15_post_0145_1x3x480x640.onnx -cotof
+onnx2tf -i yolov9_n_wholebody15_post_0145_1x3x480x640.onnx -cotof -dgc
 
 tensorflowjs_converter \
 --input_format tf_saved_model \
