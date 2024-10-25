@@ -12,14 +12,14 @@
 # && pip install tf-keras~=2.16 \
 # && pip install flatbuffers>=23.5.26
 
-TYPE=s
+TYPE=t
 # RELU= or RELU=-relu
 RELU=
 RELUS=$(echo ${RELU} | sed 's/-/_/g')
 # QAT= or QAT=-qat
 QAT=
 QATS=$(echo ${QAT} | sed 's/-/_/g')
-MODEL_NAME=yolov9_n_wholebody15_post
+MODEL_NAME=yolov9_${TYPE}_wholebody15_post
 SUFFIX="0145_1x3x"
 
 OPSET=13
