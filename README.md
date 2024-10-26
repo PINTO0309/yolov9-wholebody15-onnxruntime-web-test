@@ -83,4 +83,13 @@ tfjs_model
 ![image](https://github.com/user-attachments/assets/23930019-854e-4346-b502-e7a051f3b7d2)
 ![image](https://github.com/user-attachments/assets/f6a24109-5dd6-421d-a7c8-06b29ae45843)
 
+- Starting the inference web server
+    ```
+    python -m http.server
+    ```
+
+- Displaying a web page (with TensorFlow.js)
+
+    http://localhost:8000/test-tfjs.html
+
 **Post-processing is WIP**
