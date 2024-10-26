@@ -109,6 +109,11 @@
       for (let i = 0; i < boxesData.length; i++) {
         const [batchno, classId, score, x1, y1, x2, y2] = boxesData[i];
 
+        // クラスIDが12または13の場合はスキップ
+        if (classId === 12 || classId === 13) {
+          continue;
+        }
+
         if (score > threshold) {
           // 画像のスケールに基づいてバウンディングボックスの座標を計算
           const scaleX = canvas.width / MODEL_INPUT_WIDTH;
