@@ -96,3 +96,8 @@ tfjs_model
 
     ![image](https://github.com/user-attachments/assets/3b5115a1-d241-44b0-b6d5-16f4dcd67e94)
 
+- Displaying a web page (with TensorFlow.js + USB Camera)
+
+    http://localhost:8000/test-tfjs-usbcam.html
+
+- Results
