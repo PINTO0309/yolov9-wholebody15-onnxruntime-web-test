@@ -103,8 +103,9 @@
       ctx.drawImage(imageElement, 0, 0, canvas.width, canvas.height);
 
       const boxesData = output.arraySync(); // テンソルのデータを取得
-
       const threshold = 0.5;
+
+      output.dispose()
 
       for (let i = 0; i < boxesData.length; i++) {
         const [batchno, classId, score, x1, y1, x2, y2] = boxesData[i];
