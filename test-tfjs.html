@@ -68,7 +68,9 @@
 
     // 画像を TensorFlow.js 用に前処理する関数
     function preprocessImage(imageElement) {
-      const tensor = tf.browser.fromPixels(imageElement).expandDims(0).toFloat();
+      let tensor = tf.browser.fromPixels(imageElement).expandDims(0).toFloat();
+      // RGB を BGR に変換
+      tensor = tf.reverse(tensor, axis=[-1]); // 最後の次元 (チャネル) を反転
       return tensor;
     }
 
@@ -100,27 +102,29 @@
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(imageElement, 0, 0, canvas.width, canvas.height);
 
-      const boxes = output[0].arraySync();
-      const scores = output[1].arraySync();
-      const classes = output[2].arraySync();
+      const boxesData = output.arraySync(); // テンソルのデータを取得
 
       const threshold = 0.5;
 
-      for (let i = 0; i < scores.length; i++) {
-        if (scores[i] > threshold) {
-          const [y1, x1, y2, x2] = boxes[i];
-          const classId = classes[i];
+      for (let i = 0; i < boxesData.length; i++) {
+        const [batchno, classId, score, x1, y1, x2, y2] = boxesData[i];
+
+        if (score > threshold) {
+          // 画像のスケールに基づいてバウンディングボックスの座標を計算
           const scaleX = canvas.width / MODEL_INPUT_WIDTH;
           const scaleY = canvas.height / MODEL_INPUT_HEIGHT;
 
           const boxColor = classColors[classId % classColors.length];
 
+          // バウンディングボックスを描画
           ctx.strokeStyle = boxColor;
           ctx.lineWidth = 2;
           ctx.strokeRect(x1 * scaleX, y1 * scaleY, (x2 - x1) * scaleX, (y2 - y1) * scaleY);
 
+          // クラスIDとスコアを表示
           ctx.font = '16px Arial';
           ctx.fillStyle = boxColor;
+          ctx.fillText(`Class: ${classId} Score: ${score.toFixed(2)}`, x1 * scaleX, y1 * scaleY - 5);
         }
       }
     }
