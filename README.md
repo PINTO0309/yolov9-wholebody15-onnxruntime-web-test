@@ -101,3 +101,5 @@ tfjs_model
     http://localhost:8000/test-tfjs-usbcam.html
 
 - Results
+
+    https://github.com/user-attachments/assets/ad72026e-a972-4f50-bcc1-c6c2c66919eb
